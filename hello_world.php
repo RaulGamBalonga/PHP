@@ -69,3 +69,52 @@ array_push($my_array, "Element");
 array_push($my_array, "Element");
 print_r($my_array);
 print_r(array_unique($my_array));
+
+// Flujos
+for ($index = 0; $index <= 10; $index++) {
+    echo "for" . $index . "\n";
+}
+
+foreach ($my_array as $element) {
+    echo "forEach" . $element . "\n";
+}
+$index = 0;
+while ($index <= sizeof($my_array) - 1) {
+    echo "while" . $my_array[$index] . "\n";
+    $index++;
+}
+
+$my_int = 3;
+
+if($my_int === 1) {
+    echo "El valor de my_int es 11\n";
+} else if ($my_int > 11) {
+    echo "El valor de my_int es mayor que 11\n";
+} else {
+    echo "El valor de my_int no es 11\n";
+}
+
+// Funciones
+function print_number(int $a, $b) {
+    echo $a + $b . "\n";
+}
+
+print_number(2,6);
+// print_number("leo",6);
+// no funciona porque el tipo de dato no es el correcto
+
+class MyClass {
+    public $name;
+    public $age;
+    function __construct($name, $age){
+        $this->name = $name;
+        $this->age = $age;
+    }
+}
+
+$my_class = new MyClass("Leo", 23);
+print_r($my_class);
+echo $my_class->name . "\n";
+$my_class->name = "Juan";
+echo $my_class->name . "\n";
+echo gettype($my_class) . "\n";
