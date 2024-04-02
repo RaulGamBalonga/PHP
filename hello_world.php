@@ -118,3 +118,8 @@ echo $my_class->name . "\n";
 $my_class->name = "Juan";
 echo $my_class->name . "\n";
 echo gettype($my_class) . "\n";
+
+
+for ($i = 0; $i < count($array); $i++) {
+    echo $array[$i];
+}
