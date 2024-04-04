@@ -123,3 +123,24 @@ echo gettype($my_class) . "\n";
 for ($i = 0; $i < count($array); $i++) {
     echo $array[$i];
 }
+
+$url = 'https://api.example.com/data';
+$options = [
+    'http' => [
+        'method' => 'GET',
+        'header' => 'Content-Type: application/json',
+    ],
+];
+
+$context = stream_context_create($options);
+$response = file_get_contents($url, false, $context);
+
+if ($response === false) {
+    // Handle error
+    echo "Error fetching data";
+} else {
+    // Process the response
+    $data = json_decode($response, true);
+    // Do something with the data
+    print_r($data);
+}
